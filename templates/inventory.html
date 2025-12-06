@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Current Inventory</h2>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in stock %}
+        <tr>
+            <td>{{ item.product_id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.quantity_in_stock }}</td>
+            <td>${{ "%.2f"|format(item.price_per_unit) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('inventory_menu') }}" class="btn btn-secondary">Back</a>
+{% endblock %}

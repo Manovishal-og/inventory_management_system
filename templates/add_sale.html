@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Add New Sale</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="sale_id">Sale ID</label>
+        <input type="number" class="form-control" id="sale_id" name="sale_id" required>
+    </div>
+    <div class="form-group">
+        <label for="product_id">Product ID</label>
+        <input type="number" class="form-control" id="product_id" name="product_id" required>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" name="quantity" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price Per Unit</label>
+        <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+    </div>
+    <div class="form-group">
+        <label for="date">Sale Date</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <button type="submit" class="btn btn-success">Add Sale</button>
+    <a href="{{ url_for('inventory_menu') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

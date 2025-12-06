@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mb-4">Report Generation</h2>
+    <div class="list-group">
+        <a href="{{ url_for('profit_report') }}" class="list-group-item list-group-item-action">
+            1. Monthly Profit Report
+        </a>
+        <a href="{{ url_for('purchase_history') }}" class="list-group-item list-group-item-action">
+            2. Purchase History
+        </a>
+        <a href="{{ url_for('sales_history') }}" class="list-group-item list-group-item-action">
+            3. Sales History
+        </a>
+        <a href="{{ url_for('suppliers') }}" class="list-group-item list-group-item-action">
+            4. View Supplier Report
+        </a>
+        <a href="{{ url_for('main_menu') }}" class="list-group-item list-group-item-action">
+            ↩ Back to Main Menu
+        </a>
+    </div>
+</div>
+{% endblock %}

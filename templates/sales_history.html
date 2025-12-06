@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Sales History</h2>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Sale ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.sale_id }}</td>
+            <td>{{ sale.product_name }}</td>
+            <td>{{ sale.quantity_sold }}</td>
+            <td>{{ sale.sale_date }}</td>
+            <td>${{ "%.2f"|format(sale.price_per_unit) }}</td>
+            <td>${{ "%.2f"|format(sale.total_sale) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('reports_menu') }}" class="btn btn-secondary">Back</a>
+{% endblock %}

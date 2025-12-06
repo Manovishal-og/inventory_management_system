@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Purchase History</h2>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Purchase ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Date</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase in purchases %}
+        <tr>
+            <td>{{ purchase.purchase_id }}</td>
+            <td>{{ purchase.product_name }}</td>
+            <td>{{ purchase.quantity }}</td>
+            <td>{{ purchase.purchase_date }}</td>
+            <td>${{ "%.2f"|format(purchase.price_per_unit) }}</td>
+            <td>${{ "%.2f"|format(purchase.total_cost) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('reports_menu') }}" class="btn btn-secondary">Back</a>
+{% endblock %}

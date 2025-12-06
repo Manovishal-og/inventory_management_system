@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mb-4">Main Menu</h2>
+    <div class="list-group">
+        <a href="{{ url_for('inventory_menu') }}" class="list-group-item list-group-item-action">
+            📦 Manage Inventory
+        </a>
+        <a href="{{ url_for('reports_menu') }}" class="list-group-item list-group-item-action">
+            📊 Generate Reports
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mb-4">Inventory Management</h2>
+    <div class="list-group">
+        <a href="{{ url_for('inventory') }}" class="list-group-item list-group-item-action">
+            1. View All Products
+        </a>
+        <a href="{{ url_for('view_stock') }}" class="list-group-item list-group-item-action">
+            2. View Specific Stock
+        </a>
+        <a href="{{ url_for('add_sale') }}" class="list-group-item list-group-item-action">
+            3. Sell a Product
+        </a>
+        <a href="{{ url_for('add_purchase') }}" class="list-group-item list-group-item-action">
+            4. Purchase a Product
+        </a>
+        <a href="{{ url_for('main_menu') }}" class="list-group-item list-group-item-action">
+            ↩ Back to Main Menu
+        </a>
+    </div>
+</div>
+{% endblock %}
