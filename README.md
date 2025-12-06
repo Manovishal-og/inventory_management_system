@@ -125,6 +125,3 @@ This project is open-source — use it for learning or improvement.
 ---
 
 
-
-Just tell me!
-```
